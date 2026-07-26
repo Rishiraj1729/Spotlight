@@ -13,6 +13,7 @@ use tauri::image::Image;
 use tauri::menu::{Menu, MenuItem};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent};
 use tauri::{Manager, WindowEvent};
+use tauri_plugin_autostart::ManagerExt;
 use tauri_plugin_global_shortcut::{GlobalShortcutExt, Shortcut, ShortcutState};
 
 use hotkey::HotkeyState;
@@ -70,6 +71,7 @@ fn setup_tray(app: &tauri::App, hotkey: &str) -> tauri::Result<()> {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
+        .plugin(tauri_plugin_autostart::Builder::new().build())
         .plugin(
             tauri_plugin_global_shortcut::Builder::new()
                 .with_handler(|app, _shortcut, event| {
@@ -114,8 +116,16 @@ pub fn run() {
                 window::apply_vibrancy(&main_window);
 
                 let dismiss_handle = main_window.clone();
+                let focus_app = app.handle().clone();
                 main_window.on_window_event(move |event| {
                     if let WindowEvent::Focused(false) = event {
+                        // Keep the window visible during first-run onboarding so
+                        // clicking outside does not dismiss the welcome strip.
+                        if let Some(store) = focus_app.try_state::<SettingsStore>() {
+                            if !store.get().welcome_dismissed {
+                                return;
+                            }
+                        }
                         let _ = dismiss_handle.hide();
                     }
                 });
@@ -136,6 +146,13 @@ pub fn run() {
 
             app.global_shortcut().register(shortcut)?;
             setup_tray(app, &settings.hotkey)?;
+
+            // Launchers should stay available after reboot; enable once on startup.
+            if let Ok(false) = app.autolaunch().is_enabled() {
+                if let Err(err) = app.autolaunch().enable() {
+                    log::warn!("failed to enable login autostart: {err}");
+                }
+            }
 
             if !settings.welcome_dismissed {
                 window::show(app.handle());

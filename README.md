@@ -10,10 +10,12 @@ Press **Alt+Space** (configurable) to summon it, start typing to search apps, fi
 
 | File | Best for |
 |---|---|
-| `Spotlight_0.2.0_x64-setup.exe` | Most users — double-click and install |
-| `Spotlight_0.2.0_x64_en-US.msi` | IT / managed installs |
+| `Spotlight_0.2.1_x64-setup.exe` | Most users — double-click and install |
+| `Spotlight_0.2.1_x64_en-US.msi` | IT / managed installs |
 
 Requires **Windows 10/11 (64-bit)** and **WebView2** (pre-installed on most PCs).
+
+**After installing:** Spotlight opens automatically, registers to start at login, and shows a short welcome with your hotkey. Press **Alt+Space** anytime to search. It runs quietly in the system tray (^ menu) — use **Quit** there when you want to fully exit.
 
 **SmartScreen note:** This build is not code-signed yet. Windows may show "Unknown publisher" on first run — click **More info** → **Run anyway**.
 
@@ -42,7 +44,7 @@ Requires **Windows 10/11 (64-bit)** and **WebView2** (pre-installed on most PCs)
 | Feels like Spotlight on macOS | No | Yes - same keyboard-first, frosted, no-mouse-needed feel |
 | Fully offline | No | 100% - all search happens locally on your machine |
 
-Spotlight is the Apple-style Spotlight bar Windows never shipped - fast, and fully offline.
+Spotlight is the Apple-style Spotlight bar Windows never shipped - fast, frosted, and fully offline.
 
 ## Stack
 
@@ -103,8 +105,8 @@ pnpm tauri build
 
 Outputs:
 
-- `src-tauri/target/release/bundle/msi/Spotlight_0.2.0_x64_en-US.msi`
-- `src-tauri/target/release/bundle/nsis/Spotlight_0.2.0_x64-setup.exe`
+- `src-tauri/target/release/bundle/msi/Spotlight_0.2.1_x64_en-US.msi`
+- `src-tauri/target/release/bundle/nsis/Spotlight_0.2.1_x64-setup.exe`
 
 To share with others:
 

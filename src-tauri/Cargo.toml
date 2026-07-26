@@ -1,6 +1,6 @@
 [package]
 name = "app"
-version = "0.2.0"
+version = "0.2.1"
 description = "Spotlight for Windows - fast, beautiful, free universal launcher"
 authors = ["you"]
 license = ""
@@ -25,6 +25,7 @@ tauri = { version = "2.11.3", features = ["tray-icon", "image-png"] }
 tauri-plugin-log = "2"
 tauri-plugin-global-shortcut = "2"
 tauri-plugin-opener = "2"
+tauri-plugin-autostart = "2"
 
 # Search / ranking
 fuzzy-matcher = "0.3"

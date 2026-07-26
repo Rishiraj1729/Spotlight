@@ -72,14 +72,14 @@ function App() {
         <div className="border-b border-white/8 px-5 py-3">
           <div className="flex items-start justify-between gap-4 rounded-xl border border-white/8 bg-black/30 px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-xl">
             <div className="min-w-0 space-y-1 text-[12px] leading-relaxed text-white/60">
-              <p>Search apps, files, folders, settings, and the web.</p>
+              <p>Welcome — Spotlight is ready. Search apps, files, folders, settings, and the web.</p>
               <p>
                 Press <span className="font-medium text-white/90">{hotkey}</span> anytime to open.
               </p>
               <p>
-                Tap <span className="text-white/80">⚙</span> to change the hotkey. Runs in the
-                background — find <span className="font-medium text-white/80">Spotlight</span> in the
-                taskbar <span className="font-medium text-white/80">^</span> menu to quit.
+                Tap <span className="text-white/80">⚙</span> to change the hotkey. Starts at login and
+                runs in the background — find <span className="font-medium text-white/80">Spotlight</span>{' '}
+                in the taskbar <span className="font-medium text-white/80">^</span> menu to quit.
               </p>
             </div>
             <button
