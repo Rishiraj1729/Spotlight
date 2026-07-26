@@ -4,6 +4,19 @@ Fast, beautiful, free. A keyboard-first universal launcher for Windows inspired 
 
 Press **Alt+Space** (configurable) to summon it, start typing to search apps, files, folders, Windows settings, or do quick math.
 
+## Download
+
+**[Download latest release](https://github.com/Rishiraj1729/Spotlight/releases/latest)** — pick either installer:
+
+| File | Best for |
+|---|---|
+| `Spotlight_0.2.0_x64-setup.exe` | Most users — double-click and install |
+| `Spotlight_0.2.0_x64_en-US.msi` | IT / managed installs |
+
+Requires **Windows 10/11 (64-bit)** and **WebView2** (pre-installed on most PCs).
+
+**SmartScreen note:** This build is not code-signed yet. Windows may show "Unknown publisher" on first run — click **More info** → **Run anyway**.
+
 <p align="center">
   <img src="docs/screenshots/spotlight-empty.png" alt="Spotlight search bar, empty state" width="600">
   <br><br>
@@ -29,7 +42,7 @@ Press **Alt+Space** (configurable) to summon it, start typing to search apps, fi
 | Feels like Spotlight on macOS | No | Yes - same keyboard-first, frosted, no-mouse-needed feel |
 | Fully offline | No | 100% - all search happens locally on your machine |
 
-Spotlight is the Apple-style Spotlight bar Windows never shipped - fast, frosted, and fully offline.
+Spotlight is the Apple-style Spotlight bar Windows never shipped - fast, and fully offline.
 
 ## Stack
 
