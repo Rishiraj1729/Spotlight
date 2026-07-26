@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: transparent;
+}
+
+#root {
+  border-radius: 16px;
+  overflow: hidden;
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+body {
+  font-family:
+    'Inter',
+    -apple-system,
+    'Segoe UI',
+    system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  user-select: none;
+}
+
+.spotlight-card {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Transparent Tauri windows only receive clicks on painted pixels. */
+button,
+[role='option'] {
+  -webkit-app-region: no-drag;
+}
+
+input {
+  user-select: text;
+}
