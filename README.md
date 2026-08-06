@@ -1,6 +1,6 @@
 # Spotlight for Windows
 
-Fast, beautiful, free. A keyboard-first universal launcher for Windows inspired by macOS Spotlight - offline-first, privacy-first, and fully local.
+Faster, beautiful, free. A keyboard-first universal launcher for Windows inspired by macOS Spotlight - offline-first, privacy-first, and fully local.
 
 Press **Alt+Space** (configurable) to summon it, start typing to search apps, files, folders, Windows settings, or do quick math.
 
